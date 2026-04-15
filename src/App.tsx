@@ -15,7 +15,9 @@ import {
   Facebook,
   Phone,
   MessageCircle,
+  Mail,
   ArrowRight,
+} from 'lucide-react';
 
 // --- Types ---
 
@@ -379,18 +381,26 @@ const Contact = () => {
             
             <div className="space-y-8">
               <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-brand-accent border border-white/10">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-brand-accent border border-white/10"
+                >
                   <Mail size={24} />
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-[0.65rem] text-brand-secondary uppercase tracking-[0.2em] font-black mb-1">Email Us</p>
                   <p className="text-xl font-bold">ruhamacreative2026@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-brand-accent border border-white/10">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-brand-accent border border-white/10"
+                >
                   <Phone size={24} />
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-[0.65rem] text-brand-secondary uppercase tracking-[0.2em] font-black mb-1">Call Us</p>
                   <p className="text-xl font-bold">01609434924 / 01632846396</p>

@@ -28,7 +28,7 @@ async function startServer() {
     try {
       await transporter.sendMail({
         from: process.env.GMAIL_USER,
-        to: "ruhamacreative2026@gmail.com",
+        to: "roohamakreative@gmail.com",
         subject: `New Contact Form Submission: ${option}`,
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       });
