@@ -149,7 +149,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-12 h-24 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
         <a href="#home" className="text-xl font-black tracking-tighter uppercase hover:opacity-80 transition-opacity">
           RUHAMA <span className="text-brand-accent">CREATIVE</span>
         </a>
@@ -255,11 +255,10 @@ const Hero = () => {
 };
 
 const Portfolio = () => {
-  const [activeCategory, setActiveCategory] = useState<Category | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>('Recent');
 
   const filteredItems = useMemo(() => {
-    if (!activeCategory) return [];
-    if (activeCategory === 'Recent') return PORTFOLIO_ITEMS.slice(-3); // Assuming last 3 are recent
+    if (activeCategory === 'Recent') return PORTFOLIO_ITEMS.slice(-3);
     return PORTFOLIO_ITEMS.filter(item => item.category === activeCategory);
   }, [activeCategory]);
 
@@ -390,7 +389,7 @@ const Contact = () => {
                 </motion.div>
                 <div>
                   <p className="text-[0.65rem] text-brand-secondary uppercase tracking-[0.2em] font-black mb-1">Email Us</p>
-                  <p className="text-xl font-bold">ruhamacreative2026@gmail.com</p>
+                  <p className="text-lg md:text-xl font-bold break-all">ruhamacreative2026@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
